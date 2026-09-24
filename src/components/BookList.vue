@@ -8,23 +8,26 @@ defineProps({
   }
 })
 
-const emit = defineEmits(['return-book', 'delete-book'])
+const emit = defineEmits([
+  'remove-book',
+  'update-status'
+])
 </script>
 
 <template>
   <div>
-    <h2>Borrowing List</h2>
+    <h2>Books</h2>
 
     <p v-if="books.length === 0">
-      No books recorded yet.
+      No books added yet.
     </p>
 
     <BookItem
       v-for="book in books"
       :key="book.id"
       :book="book"
-      @return-book="emit('return-book', $event)"
-      @delete-book="emit('delete-book', $event)"
+      @remove-book="emit('remove-book', $event)"
+      @update-status="emit('update-status', $event)"
     />
   </div>
 </template>

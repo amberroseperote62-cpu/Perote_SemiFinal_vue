@@ -1,6 +1,8 @@
 <template>
-    <div class="home">
-        <h1>Welcome to the Home Page</h1>
-        <p>This is the main landing page of our application.</p>
-    </div>
+  <div>
+    <h1>About</h1>
+    <p>
+      This application helps users manage books and borrowing records.
+    </p>
+  </div>
 </template>

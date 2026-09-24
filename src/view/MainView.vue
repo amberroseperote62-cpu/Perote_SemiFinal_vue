@@ -1,20 +1,14 @@
 <script setup>
-import { onMounted } from 'vue'
 import BookForm from '../components/BookForm.vue'
 import BookList from '../components/BookList.vue'
 import { useBooks } from '../composables/useBooks'
 
 const {
   books,
-  loadBooks,
   addBook,
-  returnBook,
-  removeBook
+  removeBook,
+  updateStatus
 } = useBooks()
-
-onMounted(() => {
-  loadBooks()
-})
 </script>
 
 <template>
@@ -25,8 +19,8 @@ onMounted(() => {
 
     <BookList
       :books="books"
-      @return-book="returnBook"
-      @delete-book="removeBook"
+      @remove-book="removeBook"
+      @update-status="updateStatus"
     />
   </div>
 </template>
